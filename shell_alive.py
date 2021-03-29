@@ -26,7 +26,7 @@ def getProxy(proxyType, host, port):
 def connectTest(url, proxies=""):
 	headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36"}
 	try:
-		r = requests.get(url, headers=headers, timeout=3, proxies=proxies)
+		r = requests.get(url, headers=headers, timeout=3, proxies=proxies, allow_redirects=False)
 		if r.status_code == 200:
 			return True
 		else:
